@@ -1,3 +1,4 @@
+
 set background=dark
 set clipboard=unnamedplus
 set cursorline
@@ -28,6 +29,7 @@ call plug#begin()
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'sbdchd/neoformat'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 
 call plug#end()
@@ -39,9 +41,16 @@ colorscheme gruvbox
 nnoremap <C-t> :NERDTreeToggle<CR>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+imap <C-l> <Plug>(coc-snippets-expand)
 
 "nmap <silent> gd <Plug>(coc-definition)
 
 " let g:ycm_global_ycm_extra_conf = '/path/to/the/file'
 " let g:ycm_confirm_extra_conf = 0
 
+
+" add this line 'snippets.userSnippetsDirectory": "~/.config/nvim/snips",' to
+" coc-setings.json
+" then mkdir ~/.config/nvim/snips
+" then touch ~/.config/nvim/snips/markdown.snippets # <- doesn't have to be called markdown
+" :CocCommands snippets.editSnippets
