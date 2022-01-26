@@ -27,9 +27,12 @@ call plug#begin()
 	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 	Plug 'vim-airline/vim-airline'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'scrooloose/nerdcommenter'
 	Plug 'sbdchd/neoformat'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+	Plug 'manasthakur/vim-commentor'
+	" commenting a line shortcut is 'gcc'
+	" uncommenting a line shortcut is 'gc'
+	" gcip will comment out inside the current paragraph, and so on.
 
 
 call plug#end()
@@ -49,8 +52,11 @@ imap <C-l> <Plug>(coc-snippets-expand)
 " let g:ycm_confirm_extra_conf = 0
 
 
-" add this line 'snippets.userSnippetsDirectory": "~/.config/nvim/snips",' to
+" add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
 " coc-setings.json
 " then mkdir ~/.config/nvim/snips
 " then touch ~/.config/nvim/snips/markdown.snippets # <- doesn't have to be called markdown
 " :CocCommands snippets.editSnippets
+"
+"
+"
