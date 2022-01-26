@@ -1,4 +1,3 @@
-
 set background=dark
 set clipboard=unnamedplus
 set cursorline
