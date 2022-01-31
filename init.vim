@@ -19,6 +19,7 @@ let &t_ZR="\e[23m"
 
 
 call plug#begin()
+"	Plugs stored at ~/.local/share/nvim/plugged
 
 	Plug 'morhetz/gruvbox'
 	Plug 'scrooloose/nerdtree'
@@ -41,21 +42,15 @@ call plug#end()
 
 colorscheme gruvbox
 nnoremap <C-t> :NERDTreeToggle<CR>
+" to make functions suggestions move with tab key
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 imap <C-l> <Plug>(coc-snippets-expand)
 
-"nmap <silent> gd <Plug>(coc-definition)
-
-" let g:ycm_global_ycm_extra_conf = '/path/to/the/file'
-" let g:ycm_confirm_extra_conf = 0
-
+nmap <C-m-p> <Plug>MarkdownPreview	
 
 " add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
 " coc-setings.json
 " then mkdir ~/.config/nvim/snips
 " then touch ~/.config/nvim/snips/markdown.snippets # <- doesn't have to be called markdown
 " :CocCommands snippets.editSnippets
-"
-"
-"
