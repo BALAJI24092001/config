@@ -21,12 +21,15 @@ let &t_ZR="\e[23m"
 call plug#begin()
 "	Plugs stored at ~/.local/share/nvim/plugged
 
+	Plug 'vim-airline/vim-airline-themes'
 	Plug 'morhetz/gruvbox'
+	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'scrooloose/nerdtree'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 	Plug 'vim-airline/vim-airline'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 	Plug 'sbdchd/neoformat'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 	Plug 'manasthakur/vim-commentor'
@@ -38,17 +41,22 @@ call plug#begin()
 call plug#end()
 
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='distinguished'
+
 
 
 colorscheme gruvbox
 nnoremap <C-t> :NERDTreeToggle<CR>
 " to make functions suggestions move with tab key
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
 imap <C-l> <Plug>(coc-snippets-expand)
-
 nmap <C-m-p> <Plug>MarkdownPreview	
-
+"
+"
+"
 " add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
 " coc-setings.json
 " then mkdir ~/.config/nvim/snips
