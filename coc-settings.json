@@ -1,7 +1,9 @@
 {
 
 "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-"java.errors.incompleteClasspath.severity": "ignore",
 "codeLens.enable": true,
+"java.autobuild.enabled":true,
+"java.errors.incompleteClasspath.severity": "ignore",
 "java.configuration.updateBuildConfiguration" : "automatic"
+
 }
