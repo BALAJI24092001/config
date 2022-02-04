@@ -10,7 +10,10 @@ set title
 set t_Co=256
 set ttyfast
 set encoding=utf-8
-
+:set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+			\,a:blinkon100
+" Curson line insert mode and curson block in command mode
+" blinkon 100 milliseconds
 	
 " Italics
 let &t_ZH="\e[3m"
