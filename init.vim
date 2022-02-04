@@ -17,7 +17,6 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 
-
 call plug#begin()
 "	Plugs stored at ~/.local/share/nvim/plugged
 
@@ -28,13 +27,11 @@ call plug#begin()
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 	Plug 'vim-airline/vim-airline'
-"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 	Plug 'sbdchd/neoformat'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 	Plug 'manasthakur/vim-commentor'
-	" commenting a line shortcut is 'gcc'
-	" uncommenting a line shortcut is 'gc'
+	" toggle commenting a line shortcut is 'gcc'
 	" gcip will comment out inside the current paragraph, and so on.
 
 
@@ -44,6 +41,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#branch#enabled=1
 let g:airline_theme='distinguished'
 
 
