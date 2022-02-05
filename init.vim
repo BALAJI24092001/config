@@ -15,9 +15,6 @@ set encoding=utf-8
 " Curson line insert mode and curson block in command mode
 " blinkon 100 milliseconds
 	
-" Italics
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
 
 
 call plug#begin()
@@ -34,6 +31,7 @@ call plug#begin()
 	Plug 'sbdchd/neoformat'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 	Plug 'manasthakur/vim-commentor'
+
 	" toggle commenting a line shortcut is 'gcc'
 	" gcip will comment out inside the current paragraph, and so on.
 
@@ -46,18 +44,25 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#branch#enabled=1
 let g:airline_theme='distinguished'
+" Italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 
 
-colorscheme gruvbox
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+
+
 " to make functions suggestions move with tab key
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 imap <C-l> <Plug>(coc-snippets-expand)
 nmap <C-m-p> <Plug>MarkdownPreview	
-"
-"
-"
+
+
+colorscheme gruvbox
+
+
 " add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
 " coc-setings.json
 " then mkdir ~/.config/nvim/snips
