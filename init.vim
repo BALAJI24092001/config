@@ -25,12 +25,13 @@ call plug#begin()
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'scrooloose/nerdtree'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
+"	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 	Plug 'vim-airline/vim-airline'
 	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 	Plug 'sbdchd/neoformat'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 	Plug 'manasthakur/vim-commentor'
+	Plug 'ryanoasis/vim-devicons'
 
 	" toggle commenting a line shortcut is 'gcc'
 	" gcip will comment out inside the current paragraph, and so on.
