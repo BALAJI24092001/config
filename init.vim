@@ -45,6 +45,8 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#branch#enabled=1
 let g:airline_theme='distinguished'
+let g:mkdp_theme='light'
+" for markdown preview background white color
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
