@@ -9,7 +9,7 @@ set splitbelow splitright
 set title
 set t_Co=256
 set ttyfast
-set encoding=utf-8
+set encoding=UTF-8
 :set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 			\,a:blinkon100
 " Curson line insert mode and curson block in command mode
@@ -21,21 +21,21 @@ call plug#begin()
 "	Plugs stored at ~/.local/share/nvim/plugged
 
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'morhetz/gruvbox'
-	Plug 'nvim-treesitter/nvim-treesitter'
-	Plug 'scrooloose/nerdtree'
-	Plug 'jiangmiao/auto-pairs'
-"	Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
-	Plug 'vim-airline/vim-airline'
-	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-	Plug 'sbdchd/neoformat'
-	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-	Plug 'manasthakur/vim-commentor'
-	Plug 'ryanoasis/vim-devicons'
-
-	" toggle commenting a line shortcut is 'gcc'
-	" gcip will comment out inside the current paragraph, and so on.
-
+	Plug 'morhetz/gruvbox'											" Color Scheme
+	Plug 'nvim-treesitter/nvim-treesitter'									" Better syntax highlighting
+	Plug 'scrooloose/nerdtree'										" Directory items
+	Plug 'jiangmiao/auto-pairs'										" Pairing braces
+	Plug 'kyazdani42/nvim-web-devicons'  									" needed for galaxyline icons
+	Plug 'vim-airline/vim-airline'										" status bar
+	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}			" conqueror of code for auto code completion 
+	Plug 'sbdchd/neoformat'											" Unknown
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }				" Browser preview of markdown file
+	Plug 'manasthakur/vim-commentor' 									" For commenting gcc, gc and gcip
+"	Plug 'mg979/vim-visual-multi', {'branch': 'master'}							" multiple cursors
+	Plug 'ryanoasis/vim-devicons'										" Adding icon based on file type
+	Plug 'https://github.com/preservim/tagbar' 								" Tagbar for code navigation, variables, maps, imports etc...
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
 
@@ -53,14 +53,24 @@ let &t_ZR="\e[23m"
 
 
 
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 
 
 " to make functions suggestions move with tab key
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 imap <C-l> <Plug>(coc-snippets-expand)
-nmap <C-m-p> <Plug>MarkdownPreview	
+nnoremap <C-m-p> <Plug>MarkdownPreview	
+
+
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-v> :TagbarToggle<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap ,<space> :nohlsearch<CR>
+nnoremap <C-Tab> :bn<CR>
+nnoremap <C-S-Tab> :bp<CR>
+
 
 
 colorscheme gruvbox
