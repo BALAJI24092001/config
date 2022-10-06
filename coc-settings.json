@@ -4,6 +4,13 @@
 "codeLens.enable": true,
 "java.autobuild.enabled":true,
 "java.errors.incompleteClasspath.severity": "ignore",
-"java.configuration.updateBuildConfiguration" : "automatic"
+"java.configuration.updateBuildConfiguration": "automatic",
+"python.autoComplete.extraPaths": [
+  "${env:SPARK_HOME}/python"
+],
+
+"python.analysis.stubPath": [
+  "${env:SPARK_HOME}/python"
+]
 
 }

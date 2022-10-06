@@ -36,6 +36,7 @@ call plug#begin()
 	Plug 'https://github.com/preservim/tagbar' 								" Tagbar for code navigation, variables, maps, imports etc...
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+	Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -50,9 +51,12 @@ let g:mkdp_theme='light'
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+let b:coc_syggest_disable = 0
 
 
 
+
+let g:semshi#filetypes = ['python']
 
 
 " to make functions suggestions move with tab key
@@ -68,16 +72,34 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap ,<space> :nohlsearch<CR>
-nnoremap <C-Tab> :bn<CR>
-nnoremap <C-S-Tab> :bp<CR>
+nmap <C-Tab> :bn<CR>
+nmap <C-S-Tab> :bp<CR>
 
 
 
 colorscheme gruvbox
 
 
-" add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
+
+"add this line 'snippets.userSnippetsDirectory": (add a double quote)~/.config/nvim/snips",' to
 " coc-setings.json
 " then mkdir ~/.config/nvim/snips
 " then touch ~/.config/nvim/snips/markdown.snippets # <- doesn't have to be called markdown
 " :CocCommands snippets.editSnippets
+"
+"
+"
+
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
