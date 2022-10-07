@@ -1,5 +1,6 @@
 ## VimConfig Shortcuts
 
+
 ```
 :h[elp] keyword	-	open help for keyword
 :sav[eas] file	-	save file as
