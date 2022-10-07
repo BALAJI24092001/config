@@ -72,3 +72,17 @@ comment paragraph	-	gcip
 shift indent to right	-	ctrl + shift + 2 * greater than '>' 
 shift indent to left	-	ctrl + shift + 2 * less than '<'
 ```
+
+#### Find and Replace
+```
+Replace All:
+
+:%s/foo/bar/g
+
+Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+
+For specific lines:
+
+:6,10s/foo/bar/g
+
+```
