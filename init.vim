@@ -41,11 +41,11 @@ call plug#begin()
 	Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 	Plug 'arcticicestudio/nord-vim'
 
-	" R ide setup for autocompletion and interative r console
-	Plug 'ncm2/ncm2'
-	Plug 'roxma/nvim-yarp'
-	Plug 'jalvesaq/Nvim-R'
-	Plug 'gaalcaras/ncm-R'
+"	" R ide setup for autocompletion and interative r console
+"	Plug 'ncm2/ncm2'
+"	Plug 'roxma/nvim-yarp'
+"	Plug 'jalvesaq/Nvim-R'
+"	Plug 'gaalcaras/ncm-R'
 
 
 call plug#end()
