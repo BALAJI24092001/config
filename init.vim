@@ -60,6 +60,8 @@ let g:airline#extensions#branch#enabled=1
 let g:airline_theme='distinguished'
 let g:mkdp_theme='light' " markdown background color light
 
+let g:loaded_perl_provider = 0
+
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
