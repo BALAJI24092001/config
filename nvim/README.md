@@ -1,6 +1,5 @@
 ## VimConfig Shortcuts
 
-
 ```
 :h[elp] keyword	-	open help for keyword
 :sav[eas] file	-	save file as
@@ -13,7 +12,9 @@ K		- 	open man page for word under the cursor
 :wq		-	save and exit file
 :wq!		-	save and exit file forced
 ```
+
 #### movement
+
 ```
 h	-	<
 l 	-	>
@@ -24,7 +25,7 @@ Esc	-	escape insert mode
 
 gg		-	go to first line of document
 G		- 	go to last line of document
-10gg or 10G	-	go to line 10 
+10gg or 10G	-	go to line 10
 gd		- 	go to local declaration of the keyword
 gD		- 	go to global declaration
 /'string'	-	search for 'string' experssion in the document
@@ -44,7 +45,7 @@ insert mode	-	i in command mode(insert before the cursor)
 			a in command mode(insert after the cursor)
 			A in command mode(insert at the beginning of line)
 			o new line below the cursorline
-			O new line above the cursorline	
+			O new line above the cursorline
 copy lines	-	yy (copy single line not in visual mode)
 			y  (copy multiple lines selected in viusal mode)
 cut lines	-	cc (cut single line not in visual mode) with line space left
@@ -70,11 +71,12 @@ comment paragraph	-	gcip
 #### Indentation
 
 ```
-shift indent to right	-	ctrl + shift + 2 * greater than '>' 
+shift indent to right	-	ctrl + shift + 2 * greater than '>'
 shift indent to left	-	ctrl + shift + 2 * less than '<'
 ```
 
 #### Find and Replace
+
 ```
 Replace All:
 
